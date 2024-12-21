@@ -10,6 +10,7 @@ const Header = ({ drawerOpen }) => {
         width: drawerOpen ? `calc(100% - 240px)` : '100%', // Ajusta el ancho dependiendo del estado del drawer
         marginLeft: drawerOpen ? '240px' : '0', // Mueve el header si el drawer está abierto
         transition: 'width 0.3s ease, margin 0.3s ease', // Agrega animaciones suaves
+        zIndex: 1200, // Asegura que el Header esté encima de otros elementos
       }}
     >
       <Toolbar>

@@ -68,6 +68,7 @@ const SidebarDrawer = ({ open, onClose, user }) => {
             width: '16px', // Ancho de la franja
             backgroundColor: 'grey.300',
             cursor: 'pointer',
+            zIndex: 1200,
           }}
           onClick={onClose} // Cambié el evento a onClick
         />
