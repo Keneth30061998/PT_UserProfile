@@ -1,9 +1,19 @@
+// src/components/Footer.jsx
 import React from 'react';
 import { Box, Typography, Link } from '@mui/material';
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: '#333', color: 'white', padding: '20px 0' }}>
+    <Box
+      sx={{
+        backgroundColor: '#333',
+        color: 'white',
+        padding: '20px 0',
+        width: '100%',
+        position: 'relative',
+        bottom: 0,
+      }}
+    >
       <Box sx={{ textAlign: 'center' }}>
         <Typography variant="body2" paragraph>
           © {new Date().getFullYear()} Marvel Comics. Todos los derechos reservados.
@@ -16,7 +26,7 @@ const Footer = () => {
         </Typography>
         <Typography variant="body2">
           <Link href="/terms-of-service" color="inherit">
-            Términos y Condiciones
+            Términos y Condiciones.
           </Link>{' | '}
           <Link href="/privacy-policy" color="inherit">
             Política de Privacidad

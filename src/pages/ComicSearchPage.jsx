@@ -1,7 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { TextField, Button, CircularProgress, Typography, Box, Grid, Card, CardContent, CardMedia } from '@mui/material';
 import { fetchComicsByTitle } from '../services/marvelService';
-import debounce from 'lodash.debounce';
 import Footer from '../components/Footer'; // Importar el footer
 
 const ComicSearchPage = () => {
@@ -10,23 +9,20 @@ const ComicSearchPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const handleSearch = useCallback(
-    debounce(async (query) => {
-      if (!query) return;
+  const handleSearch = async () => {
+    if (!title) return;
 
-      setLoading(true);
-      setError(null);
-      try {
-        const fetchedComics = await fetchComicsByTitle(query);
-        setComics(fetchedComics);
-      } catch (err) {
-        setError('Error al obtener los cómics');
-      } finally {
-        setLoading(false);
-      }
-    }, 500),
-    []
-  );
+    setLoading(true);
+    setError(null);
+    try {
+      const fetchedComics = await fetchComicsByTitle(title);
+      setComics(fetchedComics);
+    } catch (err) {
+      setError('Error al obtener los cómics');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleClear = () => {
     setTitle('');
@@ -36,7 +32,6 @@ const ComicSearchPage = () => {
 
   const handleChange = (e) => {
     setTitle(e.target.value);
-    handleSearch(e.target.value);
   };
 
   return (
@@ -58,7 +53,7 @@ const ComicSearchPage = () => {
           <Button 
             variant="contained" 
             color="primary" 
-            onClick={() => handleSearch(title)} 
+            onClick={handleSearch} 
             fullWidth
             disabled={loading}
           >
@@ -77,7 +72,7 @@ const ComicSearchPage = () => {
 
       {error && <Typography color="error" variant="body1" sx={{ marginTop: 2 }}>{error}</Typography>}
 
-      <Grid container spacing={3} sx={{ marginTop: 3 }}>
+      <Grid container spacing={3} sx={{ marginTop: 3, flexGrow: 1 }}>
         {comics.length > 0 ? (
           comics.map((comic) => (
             <Grid item xs={12} sm={6} md={4} key={comic.id}>
