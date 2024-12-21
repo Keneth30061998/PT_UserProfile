@@ -18,7 +18,7 @@ export const fetchComicsByTitle = async (title) => {
   try { 
     const response = await fetch(`${API_BASE_URL}/comics?titleStartsWith=${title}&apikey=${API_KEY}&ts=${timestamp}&hash=${hash}`);
     const data = await response.json();
-    console.log(response);
+    
     if (!response.ok) throw new Error(data.status || 'Error al buscar cómics');
 
     return data.data.results.map((comic) => ({

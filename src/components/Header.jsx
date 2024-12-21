@@ -26,7 +26,7 @@ const Header = ({ drawerOpen, handleToggleDrawer }) => {
         </IconButton>
 
         <Typography variant="h6" noWrap>
-          Mi Aplicación
+          Comic-Con de Kenneth
         </Typography>
       </Toolbar>
     </AppBar>

@@ -1,7 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { TextField, Button, CircularProgress, Typography, Box, Grid, Card, CardContent, CardMedia } from '@mui/material';
 import { fetchComicsByTitle } from '../services/marvelService';
-import debounce from 'lodash.debounce'; // Importa la función debounce
+import debounce from 'lodash.debounce';
+import Footer from '../components/Footer'; // Importar el footer
 
 const ComicSearchPage = () => {
   const [title, setTitle] = useState('');
@@ -9,7 +10,6 @@ const ComicSearchPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Definir la función de búsqueda con debounce
   const handleSearch = useCallback(
     debounce(async (query) => {
       if (!query) return;
@@ -24,7 +24,7 @@ const ComicSearchPage = () => {
       } finally {
         setLoading(false);
       }
-    }, 500), // 500ms de retraso
+    }, 500),
     []
   );
 
@@ -36,13 +36,13 @@ const ComicSearchPage = () => {
 
   const handleChange = (e) => {
     setTitle(e.target.value);
-    handleSearch(e.target.value); // Llamar a la función de búsqueda con debounce
+    handleSearch(e.target.value);
   };
 
   return (
-    <Box sx={{ padding: 3 }}>
+    <Box sx={{ padding: 3, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Typography variant="h4" gutterBottom>
-        Buscar Cómics
+        Buscar Cómics de Marvel
       </Typography>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, maxWidth: 500, margin: '0 auto' }}>
@@ -60,7 +60,7 @@ const ComicSearchPage = () => {
             color="primary" 
             onClick={() => handleSearch(title)} 
             fullWidth
-            disabled={loading} // Deshabilitar el botón durante la carga
+            disabled={loading}
           >
             {loading ? <CircularProgress size={24} /> : 'Buscar'}
           </Button>
@@ -88,6 +88,7 @@ const ComicSearchPage = () => {
                   height="200"
                   image={comic.thumbnail}
                   title={comic.title}
+                  loading="lazy"
                 />
                 <CardContent>
                   <Typography variant="h6">{comic.title}</Typography>
@@ -104,6 +105,9 @@ const ComicSearchPage = () => {
           </Typography>
         )}
       </Grid>
+
+      {/* Aquí se incluye el footer */}
+      <Footer />
     </Box>
   );
 };
