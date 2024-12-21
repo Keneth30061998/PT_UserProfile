@@ -54,14 +54,7 @@ const UserListPage = () => {
           transition: 'margin 0.3s ease',
         }}
       >
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleToggleDrawer}
-          sx={{ marginBottom: 2 }}
-        >
-          {drawerOpen ? 'Cerrar Drawer' : 'Abrir Drawer'}
-        </Button>
+        
         <Typography variant="h4">Contenido Principal</Typography>
       </Box>
     </Box>
