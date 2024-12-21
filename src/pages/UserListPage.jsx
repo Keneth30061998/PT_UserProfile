@@ -1,12 +1,5 @@
-// pages/UserListPage.jsx
 import React, { useState } from "react";
-import {
-  Container,
-  CircularProgress,
-  Typography,
-  Button,
-  Box,
-} from "@mui/material";
+import { Container, CircularProgress, Typography, Box } from "@mui/material";
 import { useUsers } from "../hooks/useUser";
 import SidebarDrawer from "../components/SidebarDrawer";
 import Header from "../components/Header";
@@ -16,8 +9,8 @@ const UserListPage = () => {
   const [drawerOpen, setDrawerOpen] = useState(true); // El drawer comienza abierto
   const [selectedUser, setSelectedUser] = useState(null);
 
-  const handleToggleDrawer = () => setDrawerOpen((prev) => !prev);
-  const handleOpenDrawer = () => setDrawerOpen(true); // Función para abrir directamente el drawer
+  const handleToggleDrawer = () => setDrawerOpen((prev) => !prev); // Alterna el estado del drawer
+  const handleOpenDrawer = () => setDrawerOpen(true); // Función para abrir el drawer
 
   // Selecciona un usuario al cargar los datos
   React.useEffect(() => {
@@ -44,8 +37,8 @@ const UserListPage = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      {/* El Header se adapta al estado del drawer */}
-      <Header drawerOpen={drawerOpen} />
+      {/* Header recibe la función handleToggleDrawer como prop */}
+      <Header drawerOpen={drawerOpen} handleToggleDrawer={handleToggleDrawer} />
 
       {/* SidebarDrawer con franja para abrir */}
       <SidebarDrawer
@@ -62,9 +55,8 @@ const UserListPage = () => {
           padding: 3,
           marginLeft: drawerOpen ? "240px" : "16px", // Ajusta el margen según el estado del drawer
           transition: "margin 0.3s ease",
-          position: "relative", // Asegura que se posicionen correctamente respecto al Header
           marginTop: "64px", // Desplazamos el contenido principal hacia abajo para no quedar cubierto por el header
-          zIndex: 1, // Para asegurar que no quede por debajo del Header si es necesario
+          zIndex: 1, // Asegura que no quede por debajo del Header si es necesario
         }}
       >
         <Typography variant="h4">Contenido Principal</Typography>

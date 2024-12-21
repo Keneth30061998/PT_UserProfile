@@ -8,8 +8,6 @@ const App = () => {
   return (
     <Router>  {/* Se configura el enrutamiento de la aplicación */}
       <CssBaseline /> {/* Aplica el estilo base de Material UI */}
-      
-
       <Routes>  {/* Define las rutas de la aplicación */}
         <Route path="/" element={<UserListPage/>} />  {/* Ruta para la lista de usuarios */}
         {/* Puedes agregar más rutas según las vistas que necesites */}
