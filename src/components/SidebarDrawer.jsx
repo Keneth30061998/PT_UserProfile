@@ -21,7 +21,7 @@ const SidebarDrawer = ({ open, onClose, user }) => {
         {user && (
           <Box sx={{ padding: 2, textAlign: 'center' }}>
             <Avatar
-              src={user?.picture?.medium}
+              src={user?.picture?.large}
               alt={user?.name?.first || 'Usuario'}
               sx={{ width: 100, height: 100, margin: '0 auto 16px' }}
             />
