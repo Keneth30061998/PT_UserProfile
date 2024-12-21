@@ -61,9 +61,7 @@ const UserListPage = () => {
             zIndex: 1, 
           }}
         >
-          <Typography variant="h4" gutterBottom>
-            Contenido Principal
-          </Typography>
+          
   
           {/* Aquí se agrega el componente ComicSearchPage */}
           <ComicSearchPage />
