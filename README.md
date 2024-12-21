@@ -1,17 +1,23 @@
-User-Cómics - Aplicación Web Progresiva (PWA)
+# **Gestión de Cómics - Aplicación Web Progresiva (PWA)**
 
-Descripción del Proyecto
+## **Descripción del Proyecto**
 
-Este proyecto consiste en el desarrollo de una Aplicación Web Progresiva (PWA) que permite gestionar usuarios y realizar búsquedas de cómics de Marvel. La aplicación cuenta con dos funcionalidades principales:
+Este proyecto consiste en el desarrollo de una **Aplicación Web Progresiva (PWA)** que permite gestionar usuarios y realizar búsquedas de cómics de Marvel. La aplicación cuenta con dos funcionalidades principales:
 
-Búsqueda de cómics: Los usuarios pueden buscar cómics por título desde la API pública de Marvel.
-Lista de usuarios aleatorios: Se muestra una lista de usuarios aleatorios obtenidos desde una API externa.
-La aplicación está construida con React y hace uso de Material UI para los componentes de la interfaz. Además, está optimizada como PWA, permitiendo una experiencia de usuario fluida incluso sin conexión a internet.
+- **Búsqueda de cómics**: Los usuarios pueden buscar cómics por título desde la API pública de Marvel.
+- **Lista de usuarios aleatorios**: Se muestra una lista de usuarios aleatorios obtenidos desde una API externa.
 
-Pasos para Instalar y Ejecutar el Proyecto Localmente
+La aplicación está construida con **React** y hace uso de **Material UI** para los componentes de la interfaz. Además, está optimizada como **PWA**, permitiendo una experiencia de usuario fluida incluso sin conexión a internet.
 
-Clona este repositorio:
-git clone https://github.com/tu_usuario/gestor-comics.git
+---
+
+## **Pasos para Instalar y Ejecutar el Proyecto Localmente**
+
+1. **Clona este repositorio**:
+   ```bash
+   git clone https://github.com/tu_usuario/gestor-comics.git
+
+   
 Accede al directorio del proyecto:
 cd gestor-comics
 Instala las dependencias:
