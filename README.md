@@ -45,7 +45,7 @@ La aplicación está construida con **React** y hace uso de **Material UI** para
 ## **Enlace al Proyecto Publicado en Netlify**
 
 **Puedes ver el proyecto en vivo haciendo clic en el siguiente enlace**:
-    ```bash
+    
    https://pt-user-profile.netlify.app
 
 Ver el proyecto en Netlify
