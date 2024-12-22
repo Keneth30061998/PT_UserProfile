@@ -15,7 +15,7 @@ La aplicación está construida con **React** y hace uso de **Material UI** para
 
 1. **Clona este repositorio**:
    ```bash
-   git clone https://github.com/tu_usuario/gestor-comics.git
+   git clone https://github.com/Keneth30061998/PT_UserProfile.git
 
 
 2. **Accede al directorio del proyecto**:
