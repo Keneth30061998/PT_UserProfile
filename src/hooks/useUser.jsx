@@ -1,4 +1,3 @@
-// hooks/useUser.jsx
 import { useState, useEffect } from 'react';
 import { getUsers } from '../services/userService'; // Servicio para obtener usuarios
 

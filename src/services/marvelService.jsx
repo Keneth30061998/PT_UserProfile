@@ -1,8 +1,8 @@
 import md5 from 'md5'; // Importar la librería md5
 
 const API_BASE_URL = 'https://gateway.marvel.com/v1/public';
-const API_KEY = '083e2f2717e6e7dd0d6b2ee70e775467'; // Tu clave pública
-const PRIVATE_KEY = 'a8fb88c829f324005d77d389d360bdd21c45294f'; // Reemplázalo con tu clave privada
+const API_KEY = '083e2f2717e6e7dd0d6b2ee70e775467'; // Clave pública
+const PRIVATE_KEY = 'a8fb88c829f324005d77d389d360bdd21c45294f'; // Clave privada
 
 // Función para obtener el hash
 const getHash = (timestamp) => {

@@ -100,8 +100,6 @@ const ComicSearchPage = () => {
           </Typography>
         )}
       </Grid>
-
-      {/* Aquí se incluye el footer */}
       <Footer />
     </Box>
   );

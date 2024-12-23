@@ -3,7 +3,7 @@ import { Container, CircularProgress, Typography, Box } from "@mui/material";
 import { useUsers } from "../hooks/useUser";
 import SidebarDrawer from "../components/SidebarDrawer";
 import Header from "../components/Header";
-import ComicSearchPage from "../pages/ComicSearchPage"; // Asegúrate de importar ComicSearchPage
+import ComicSearchPage from "../pages/ComicSearchPage"; 
 
 
 const UserListPage = () => {
@@ -14,7 +14,7 @@ const UserListPage = () => {
     const handleToggleDrawer = () => setDrawerOpen((prev) => !prev); // Alterna el estado del drawer
     const handleOpenDrawer = () => setDrawerOpen(true); // Función para abrir el drawer
   
-    // Selecciona un usuario al cargar los datos
+
     React.useEffect(() => {
       if (users && users.length > 0) {
         setSelectedUser(users[0]); // Establece el primer usuario como predeterminado
@@ -62,7 +62,6 @@ const UserListPage = () => {
           }}
         >
           
-  
           {/* Aquí se agrega el componente ComicSearchPage */}
           <ComicSearchPage />
         </Box>
